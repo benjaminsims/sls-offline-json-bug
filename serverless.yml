@@ -1,0 +1,15 @@
+service: bigjson
+provider:
+  name: aws
+  runtime: python3.7
+
+plugins:
+  - serverless-offline-python
+
+functions:
+  big_json:
+    handler: handler.big_json
+    events:
+      - http:
+          path: /bigjson/
+          method: get
